@@ -4,7 +4,7 @@ Notes, questions et expérimentations sur le code Scribus
 - Does printBacktrace(24); print a backtrace on the terminal ?
 
 - tester :
-<code>
+
 // dans void PageItem_TextFrame::layout(), dump styles :
   qDebug("JL : PARstyles of the textframe ", itemName());
 	for (int i=0; i < itemText.nrOfParagraphs(); ++i) {
@@ -14,4 +14,3 @@ Notes, questions et expérimentations sur le code Scribus
 	}
 	qDebug() << "default:";
 	dumpIt(itemText.defaultStyle());
-</code>
