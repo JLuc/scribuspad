@@ -20,6 +20,15 @@ Notes, questions et expérimentations sur le code Scribus
 - All PageItem items have an itemText of class StoryText. Why not only PageItem_TextFrame's ?
 - Is itemText->length() 0 for all linked text frames except first one ?
 
+=============
 Semble t il :
-- les instances de LineControl servent à se représenter une ligne in situ et à y projeter les calculs de layout
-- firstInFrame() renvoie le n° du caractère dans la chaine de textframes du 1er caractère du frame
+
+- les instances de LineControl servent à se représenter une ligne in situ et à y projeter les calculs de layout ?
+
+- firstInFrame() renvoie l'index du caractère du 1er caractère du frame au sein du story = texte de la chaine de textframes. Commence à 0.
+
+- lastInFrame() renvoie l'index du caractère du dernier caractère du frame au sein du story. MaxChars - 1.
+
+- tous les itemText d'une même chaine ont un itemText identique, contenant le texte de toute la chaine (par quel mécanisme ? une ref à l'initatialisation ?)
+
+- on peut sprinter des QString ainsi : QString("first line at y=%1").arg(current.yPos);
